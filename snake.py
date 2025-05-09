@@ -29,34 +29,30 @@ class Snake:  # attributes of snake are body parts
         new_part.penup()
         xcoor = self.tail.xcor()
         ycoor = self.tail.ycor()
-        if self.head.heading() == 0:
-            new_part.goto(xcoor  , ycoor - 20)
-        if self.head.heading() == 180:
+        if self.tail.heading() == 0:
             new_part.goto(xcoor  , ycoor + 20)
-        if self.head.heading() ==90:
-            new_part.goto(xcoor -20  , ycoor )
-        if self.head.heading() == 270:
-            new_part.goto(xcoor + 20 , ycoor )
+        if self.tail.heading() == 180:
+            new_part.goto(xcoor  , ycoor - 20)
+        if self.tail.heading() ==90:
+            new_part.goto(xcoor +20  , ycoor )
+        if self.tail.heading() == 270:
+            new_part.goto(xcoor - 20 , ycoor )
         self.body.append(new_part)
 
     # defining moment
     def up(self):
         if self.head.heading() != 180:
             self.head.seth(0)
-            self.fd(FIXED_DISTANCE)
             
     def left(self):
         if self.head.heading() != 90:
             self.head.seth(270)
-            self.fd(FIXED_DISTANCE)
             
     def right(self):
         if self.head.heading() != 270:
             self.head.seth(90)
-            self.fd(FIXED_DISTANCE)
             
     def down(self):
         if self.head.heading() !=0:
             self.head.seth(180)
-            self.fd(FIXED_DISTANCE)
       

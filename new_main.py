@@ -26,6 +26,7 @@ s1.tracer(0)
 s1.listen()
 game_is_on = True
 while game_is_on:
+    time.sleep(0.1)
     s1.onkey(snake.up , "Up")
     s1.onkey(snake.down , "Down")
     s1.onkey(snake.left , "Left")
@@ -45,7 +46,6 @@ while game_is_on:
             game_is_on = False
             scorecard.gameover()
     s1.update()
-    time.sleep(1/10)
     
 
 
