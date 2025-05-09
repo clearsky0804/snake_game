@@ -12,8 +12,8 @@ class Snake:  # attributes of snake are body parts
             part.goto(INITIAL_COORDINATES[_])
             self.body.append(part)
         self.head = self.body[0]
-        body_length = len(self.body) 
-        self.tail = self.body[body_length - 1]
+        self.body_length = len(self.body) 
+        self.tail = self.body[self.body_length - 1]
 
     def const_movement(self):
         for every_part in range(len(self.body) - 1, 0 ,-1):
